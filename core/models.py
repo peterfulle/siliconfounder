@@ -1,35 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Modelos existentes (mantén los que ya tienes)
-class Service(models.Model):
-    title = models.CharField(max_length=200)
-    icon = models.CharField(max_length=50, help_text="Nombre del ícono de Font Awesome")
-    description = models.TextField()
-    order = models.PositiveIntegerField(default=0)
-    
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        ordering = ['order']
-
-class Testimonial(models.Model):
-    name = models.CharField(max_length=200)
-    position = models.CharField(max_length=200)
-    company = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='testimonials/', blank=True, null=True)
-    quote = models.TextField()
-    rating = models.PositiveIntegerField(choices=[(i, i) for i in range(1, 6)], default=5)
-    active = models.BooleanField(default=True)
-    order = models.PositiveIntegerField(default=0)
-    
-    def __str__(self):
-        return f"{self.name} - {self.company}"
-    
-    class Meta:
-        ordering = ['order']
-
+# MODELO DE CONTACTO (mantener para formularios)
 class Contact(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
@@ -44,23 +16,7 @@ class Contact(models.Model):
     class Meta:
         ordering = ['-created_at']
 
-class Project(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    image = models.ImageField(upload_to='projects/', blank=True, null=True)
-    url = models.URLField(blank=True, null=True)
-    github_url = models.URLField(blank=True, null=True)
-    technologies = models.TextField(help_text="Comma-separated list of technologies")
-    featured = models.BooleanField(default=False)
-    order = models.PositiveIntegerField(default=0)
-    
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-        ordering = ['order']
-
-# NUEVOS MODELOS PARA SILICON FOUNDERS
+# MODELOS ESPECÍFICOS PARA SILICON FOUNDERS
 class Industry(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
@@ -131,3 +87,27 @@ class Event(models.Model):
     
     class Meta:
         ordering = ['-date']
+
+# MODELO PARA INVERSORES (nuevo)
+class InvestorProfile(models.Model):
+    INVESTOR_TYPE = [
+        ('angel', 'Angel Investor'),
+        ('vc', 'Venture Capital'),
+        ('family_office', 'Family Office'),
+        ('corporate', 'Corporate VC'),
+    ]
+    
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    company_name = models.CharField(max_length=200)
+    investor_type = models.CharField(max_length=50, choices=INVESTOR_TYPE)
+    focus_industries = models.ManyToManyField(Industry)
+    min_investment = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    max_investment = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    linkedin_url = models.URLField(blank=True)
+    website = models.URLField(blank=True)
+    bio = models.TextField(max_length=500)
+    featured = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.user.get_full_name()} - {self.company_name}"

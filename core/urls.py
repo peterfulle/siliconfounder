@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import IndexView, SiliconFoundersView, contact_view
+from .views import SiliconFoundersView, contact_view
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='index'),
-    path('silicon-founders/', SiliconFoundersView.as_view(), name='silicon_founders'),
+    # Silicon Founders como página principal
+    path('', SiliconFoundersView.as_view(), name='index'),
     path('contact/', contact_view, name='contact'),
 ]
