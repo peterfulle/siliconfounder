@@ -1,0 +1,368 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silicon Founders - Conectando Fundadores Latinos en San Francisco</title>
+    <meta name="description" content="La comunidad líder de founders e inversores latinos en Silicon Valley. Conectamos visionarios latinoamericanos con el ecosistema de innovación de San Francisco.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    
+    <style>
+        :root {
+            --accent-primary: #6366F1;
+            --accent-secondary: #8B5CF6;
+            --accent-third: #F59E0B;
+            --dark-100: #0F0F23;
+            --dark-200: #1A1A2E;
+            --dark-300: #16213E;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--dark-100) 0%, var(--dark-200) 100%);
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 text-white">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500 rounded-full filter blur-3xl animate-pulse delay-2000"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="inline-flex items-center px-4 py-2 bg-purple-900/30 border border-purple-500/30 rounded-full text-purple-300 text-sm mb-8" data-aos="fade-down">
+                <i class="fas fa-rocket mr-2"></i>
+                <span>Conectando Visionarios Latinos en Silicon Valley</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold font-display mb-6 leading-tight" data-aos="fade-up">
+                Silicon <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Founders</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                La comunidad exclusiva que conecta founders e inversores latinos con el ecosistema de innovación más poderoso del mundo.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#join" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
+                    Únete a la Comunidad
+                </a>
+                <a href="#events" class="px-8 py-4 border border-purple-500 hover:bg-purple-900/30 rounded-lg font-semibold text-lg transition-all">
+                    Ver Próximos Eventos
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="600">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-purple-400">150+</div>
+                    <div class="text-gray-400">Founders Activos</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-pink-400">50+</div>
+                    <div class="text-gray-400">Inversores</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-indigo-400">$100M+</div>
+                    <div class="text-gray-400">Capital Conectado</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-yellow-400">25+</div>
+                    <div class="text-gray-400">Exits Exitosos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios/Beneficios -->
+    <section id="benefits" class="py-20 bg-black/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold font-display mb-6">
+                    ¿Por qué <span class="text-purple-400">Silicon Founders</span>?
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Somos más que una red de contactos. Somos el puente entre el talento latino y las oportunidades de Silicon Valley.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Beneficio 1 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Networking Curado</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Conecta con founders e inversores verificados en eventos exclusivos diseñados para crear relaciones duraderas y estratégicas.
+                    </p>
+                </div>
+                
+                <!-- Beneficio 2 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Acceso a Capital</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Presenta tu startup directamente a VCs e inversores ángeles que buscan activamente oportunidades en el mercado latino.
+                    </p>
+                </div>
+                
+                <!-- Beneficio 3 -->
+                <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Comunidad Auténtica</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Forma parte de una comunidad que entiende tu cultura, tus desafíos y tu visión como emprendedor latino en Silicon Valley.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Founders -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold font-display mb-6">
+                    Founders <span class="text-purple-400">Destacados</span>
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Conoce a algunos de los visionarios que están construyendo el futuro
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Founder Card - Ejemplo con Neuratek -->
+                <div class="bg-gradient-to-br from-gray-900 to-purple-900/20 rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/40 transition-all transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-2xl font-bold mr-4">
+                            N
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Peter Fulle</h3>
+                            <p class="text-purple-400">CEO, Neuratek</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        "DeepTech startup enfocada en IA y machine learning. Preparándonos para Series A."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Series A</span>
+                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-sm">DeepTech</span>
+                    </div>
+                </div>
+                
+                <!-- Más founder cards -->
+                <div class="bg-gradient-to-br from-gray-900 to-indigo-900/20 rounded-xl p-6 border border-indigo-500/20 hover:border-indigo-500/40 transition-all transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-2xl font-bold mr-4">
+                            M
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">María González</h3>
+                            <p class="text-indigo-400">Founder, FinTech Latina</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        "Democratizando servicios financieros para la comunidad latina en EEUU."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Seed</span>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm">FinTech</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-900 to-pink-900/20 rounded-xl p-6 border border-pink-500/20 hover:border-pink-500/40 transition-all transform hover:scale-105" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center text-2xl font-bold mr-4">
+                            C
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Carlos Ruiz</h3>
+                            <p class="text-pink-400">CEO, HealthTech Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        "Revolucionando la telemedicina para comunidades desatendidas."
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Series A</span>
+                        <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">HealthTech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximos Eventos -->
+    <section id="events" class="py-20 bg-black/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold font-display mb-6">
+                    Próximos <span class="text-purple-400">Eventos</span>
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Únete a nuestros eventos exclusivos en San Francisco
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Evento 1 -->
+                <div class="bg-gradient-to-br from-gray-900 to-purple-900/30 rounded-xl overflow-hidden border border-purple-500/20" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Pitch Night</span>
+                            <span class="text-gray-400">15 Jun 2025</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Latino Founders Pitch Night</h3>
+                        <p class="text-gray-400 mb-4">
+                            6 startups latinos presentarán a 25 inversores en una noche exclusiva en South Bay.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Palo Alto, CA</span>
+                            </div>
+                            <a href="#" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors">
+                                Registrarse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evento 2 -->
+                <div class="bg-gradient-to-br from-gray-900 to-indigo-900/30 rounded-xl overflow-hidden border border-indigo-500/20" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-sm">Networking</span>
+                            <span class="text-gray-400">28 Jun 2025</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Founders & VCs Breakfast</h3>
+                        <p class="text-gray-400 mb-4">
+                            Desayuno íntimo con 30 founders y 15 VCs para conversaciones estratégicas.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>San Francisco, CA</span>
+                            </div>
+                            <a href="#" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors">
+                                Registrarse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="join" class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold font-display mb-6" data-aos="fade-up">
+                    ¿Listo para unirte a <span class="text-purple-400">Silicon Founders</span>?
+                </h2>
+                <p class="text-xl text-gray-400 mb-12" data-aos="fade-up" data-aos-delay="200">
+                    Forma parte de la comunidad que está redefiniendo el emprendimiento latino en Silicon Valley
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#founder-form" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Soy Founder
+                    </a>
+                    <a href="#investor-form" class="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Soy Inversor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/80 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <h3 class="text-2xl font-bold font-display mb-4">Silicon Founders</h3>
+                    <p class="text-gray-400 mb-6">
+                        Conectando el talento latino con las oportunidades de Silicon Valley.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Comunidad</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Founders</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Inversores</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Eventos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Recursos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i>hello@siliconfounders.co</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>San Francisco, CA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Silicon Founders. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>
